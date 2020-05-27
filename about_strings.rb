@@ -13,7 +13,7 @@ class AboutStrings < Neo::Koan
 
   def test_use_single_quotes_to_create_string_with_double_quotes
     string = 'He said, "Go Away."'
-    assert_equal "He said, \"Go Away.\"", string
+    assert_equal 'He said, "Go Away."', string
   end
 
   def test_use_double_quotes_to_create_strings_with_single_quotes
@@ -117,7 +117,7 @@ EOS
   def test_single_quotes_sometimes_interpret_escape_characters
     string = '\\\''
     assert_equal 2, string.size
-    assert_equal "\\'", string
+    assert_equal '\\\'', string
   end
 
   def test_double_quoted_strings_interpolate_variables
@@ -152,8 +152,8 @@ EOS
 
   in_ruby_version("1.8") do
     def test_in_older_ruby_single_characters_are_represented_by_integers
-      assert_equal __, ?a
-      assert_equal __, ?a == 97
+      assert_equal "a", ?a
+      assert_equal false, ?a == 97
 
       assert_equal __, ?b == (?a + 1)
     end

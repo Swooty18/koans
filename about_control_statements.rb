@@ -42,7 +42,7 @@ class AboutControlStatements < Neo::Koan
     value = if false
               :true_value
             end
-    assert_equal nil, value
+    assert_equal nil , value
   end
 
   def test_condition_operators
@@ -77,7 +77,7 @@ class AboutControlStatements < Neo::Koan
     result = :default_value
     result = :false_value unless false
 
-    assert_equal :false_value , result
+    assert_equal :false_value, result
   end
 
   def test_while_statement
@@ -119,7 +119,7 @@ class AboutControlStatements < Neo::Koan
       next if (i % 2) == 0
       result << i
     end
-    assert_equal [1, 3, 5, 7, 9], result
+    assert_equal [1,3,5,7,9], result
   end
 
   def test_for_statement

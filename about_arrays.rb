@@ -36,7 +36,7 @@ class AboutArrays < Neo::Koan
     array = [:peanut, :butter, :and, :jelly]
 
     assert_equal [:peanut], array[0,1]
-    assert_equal [:peanut,:butter], array[0,2]
+    assert_equal [:peanut, :butter], array[0,2]
     assert_equal [:and, :jelly], array[2,2]
     assert_equal [:and, :jelly], array[2,20]
     assert_equal [], array[4,0]
@@ -63,7 +63,7 @@ class AboutArrays < Neo::Koan
     array = [1,2]
     array.push(:last)
 
-    assert_equal [1,2,:last], array
+    assert_equal [1,2, :last], array
 
     popped_value = array.pop
     assert_equal :last, popped_value
