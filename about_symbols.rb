@@ -38,13 +38,13 @@ class AboutSymbols < Neo::Koan
     def test_constants_become_symbols
       all_symbols_as_strings = Symbol.all_symbols.map { |x| x.to_s }
 
-      assert_equal false, all_symbols_as_strings.include?(RubyConstant)
+      assert_equal false, all_symbols_as_strings.include?("What is the sound of one hand clapping?")
     end
   end
 
   def test_symbols_can_be_made_from_strings
     string = "catsAndDogs"
-    assert_equal :catsAndDogs, string.to_sym
+    assert_equal :"catsAndDogs", string.to_sym
   end
 
   def test_symbols_with_spaces_can_be_built
@@ -57,14 +57,14 @@ class AboutSymbols < Neo::Koan
     value = "and"
     symbol = :"cats #{value} dogs"
 
-    assert_equal "cats and dogs".to_sym, symbol
+    assert_equal "cats #{value} dogs".to_sym, symbol
   end
 
   def test_to_s_is_called_on_interpolated_symbols
     symbol = :cats
     string = "It is raining #{symbol} and dogs."
 
-    assert_equal "It is raining cats and dogs.", string
+    assert_equal "It is raining #{:cats} and dogs.", string
   end
 
   def test_symbols_are_not_strings
